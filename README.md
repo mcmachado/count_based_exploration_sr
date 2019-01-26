@@ -1,6 +1,6 @@
 # Count-based Exploration with the Successor Representation
 
-These are the commands we used to obtain the results reported in the paper. For the Function Approximation case the rom name should be adapted for different games, of course. This assumes one has the Arcade Learning Environment properly installed in their computer, as well as the other dependencies.
+These are the commands we used to obtain the results reported in the [Count-based Exploration with the Successor Representation](https://arxiv.org/abs/1807.11622). For the function approximation case the rom name should be adapted for different games, of course. This assumes one has the [Arcade Learning Environment](https://github.com/mgbellemare/Arcade-Learning-Environment) properly installed in their computer, as well as the other dependencies.
 
 ## Tabular case:
 
