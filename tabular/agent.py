@@ -24,7 +24,7 @@ class Agent(ABC):
         if sampled < epsilon:
             return random.choice(action_set)
         else:
-            utils.argmax(q_values[action_set]) # I'm breaking ties randomly
+            return utils.argmax(q_values[action_set]) # I'm breaking ties randomly
 
     def get_avg_undisc_return(self):
         return self.total_undisc_return/self.episode_count

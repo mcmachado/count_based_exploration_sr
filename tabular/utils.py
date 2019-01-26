@@ -28,12 +28,20 @@ class ArgsParser:
                             help='For how many episodes we are going to learn.')
         parser.add_argument('-a', '--step_size', type=float, default=0.1,
                             help="Algorithm's step size. Alpha parameter in algorithms such as Sarsa.")
+        parser.add_argument('-y', '--step_size_sr', type=float, default=0.1,
+                            help="Step size to compute the SR with TD when using it in algorithms such as Sarsa.")
         parser.add_argument('-b', '--beta', type=float, default=1.0,
                             help="Real reward = Real reward + beta * Intrinsic Reward.")
         parser.add_argument('-g', '--gamma', type=float, default=0.95,
                             help='Gamma. Discount factor to be used by the algorithm.')
+        parser.add_argument('-z ', '--gamma_sr', type=float, default=0.95,
+                            help='Gamma value to compute the SR.')
         parser.add_argument('-e', '--epsilon', type=float, default=0.05,
                             help='Epsilon. This is the exploration parameter (trade-off).')
+        parser.add_argument('-r', '--reward_structure', type=str, default="",
+                            help="Valid values: 'dot-prod', 'diff', 'gamma-diff', 'norm' ")
+        parser.add_argument('-d', '--divide', type=bool, default=False,
+                            help="If true, the reward is equal to 1/reward_structure")
 
         args = parser.parse_args()
 
