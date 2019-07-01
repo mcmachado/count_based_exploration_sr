@@ -47,7 +47,7 @@ class Sarsa_SR(Agent):
             self.current_undisc_return = 0
 
     def update_q_values(self, s, a, r, next_s, next_a):
-        self.q[s][a] = self.q[s][a] + self.alpha * (r + self.gamma - (1.0 - self.env.is_terminal()) *
+        self.q[s][a] = self.q[s][a] + self.alpha * (r + self.gamma * (1.0 - self.env.is_terminal()) *
                                                     self.q[next_s][next_a] - self.q[s][a])
 
     def update_sr_values(self, s, next_s):
@@ -56,7 +56,7 @@ class Sarsa_SR(Agent):
 
             # print(self.sr[s][i], '+', self.alpha_sr, '* (', cumulant, '+', self.gamma_sr, '-(',  1.0, '-',
             #       self.env.is_terminal(), ') *', self.sr[next_s][i], '-', self.sr[s][i], ')')
-            self.sr[s][i] = self.sr[s][i] + self.alpha_sr * (cumulant + self.gamma_sr - (1.0 - self.env.is_terminal()) *
+            self.sr[s][i] = self.sr[s][i] + self.alpha_sr * (cumulant + self.gamma_sr * (1.0 - self.env.is_terminal()) *
                                                              self.sr[next_s][i] - self.sr[s][i])
 
         # print(self.sr)
